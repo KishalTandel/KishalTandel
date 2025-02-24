@@ -1,0 +1,55 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+
+
+.nav_bar{
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  height: 7vmin;
+  width:100%;
+}
+
+.title{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: auto;
+  margin-left: 2vmin;
+  font-size: 3.6vmin;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.to{
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 2.7vmin;
+}
+
+.dark{
+  background-color: #212529;
+  color: #FFFFFF;
+  border-bottom: solid #000000 0.3vmin;
+}
+
+.light{
+  background-color: #FFFFFF;
+  color: #212529;
+  border-bottom: solid #000000 0.3vmin;
+}
+
+.hide{
+  display: none;
+}
+
+.toggle,.github,.CV:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+

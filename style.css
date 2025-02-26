@@ -1,8 +1,11 @@
 *{
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
+body{
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
 
 
 .nav_bar{
@@ -11,10 +14,10 @@
   display: flex;
   justify-content: space-between;
   height: 7vmin;
-  width:100%;
+  width: 100%;
 }
 
-.title{
+.web_link{
   display: flex;
   justify-content: left;
   align-items: center;
@@ -24,7 +27,7 @@
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.to{
+.sub_nav{
   display: flex;
   width: 50%;
   justify-content: space-evenly;
@@ -33,23 +36,54 @@
 }
 
 .dark{
-  background-color: #212529;
-  color: #FFFFFF;
-  border-bottom: solid #000000 0.3vmin;
+  background-color: #1f1f1f;
+  color: #9f9f9f; 
 }
 
 .light{
-  background-color: #FFFFFF;
-  color: #212529;
-  border-bottom: solid #000000 0.3vmin;
+  background-color: #c6c6c6;
+  color: #1c1c1c;
 }
 
 .hide{
   display: none;
 }
 
-.toggle,.github,.CV:hover{
+.toggle,.github,.CV,.favicon img:hover{
   cursor: pointer;
   opacity: 0.8;
 }
+
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 20vmin;
+  justify-content: space-evenly;
+  height: auto;
+  width: auto;
+  align-items: center;
+}
+
+.name{
+  font-size: 4vmin;
+  width: auto;
+  font-family: monospace;
+  font-weight: 900;
+}
+
+.links{
+  width: 20vmin;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.smooth{
+  transition: opacity 0 ease;
+}
+
+
+
+
+
 

@@ -82,11 +82,15 @@ window.addEventListener('scroll', () => {
     if(container.getBoundingClientRect().bottom<0 ){ 
         navBar.style.transform='translateY(0%)';
         navBar.style.top=0
-        navBar.classList.remove('hide');
     } else if(navBar.getBoundingClientRect().top===0){
         navBar.style.transform='translateY(-100%)';
-    } 
+    }  
 });
+
+window.addEventListener('scroll', () => {
+    setTimeout(()=>{
+        if(navBar.getBoundingClientRect().top===container.getBoundingClientRect().top){navBar.style.transform='translateY(-100%)'}
+    },450)})
 
 
 let getQuote = () =>{

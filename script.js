@@ -108,27 +108,31 @@ window.addEventListener('scroll', () => {
 
 
 
-let storedIndex=localStorage.getItem('index');
+let storedIndex=-1;
 let isSame=-1;
+let runTimeout=[];
+let index;
+
 let getQuote = () => {
-    let value=Math.round(Math.random()*((authors.length)-1));
-    if (storedIndex===value){
-        getQuote();
-    }else if(isSame===value){
-        getQuote();
-    }else{
+    do{
+        index=Math.floor(Math.random()*(quotes.length)); 
+    } while(index===isSame || index===localStorage.getItem('index'));
+    localStorage.setItem('index', index);
+        runTimeout.forEach((timeout)=>{clearTimeout(timeout)});
+        runTimeout=[];
         quotation.innerText='';
-        const str=quotes[authors[value]];
-        const arr=str.split('');
-        arr.forEach((letter,index)=>{
-        setTimeout(()=>{
+        let str=quotes[index].quote;
+        let arr=str.split('');
+        arr.forEach((letter,idx)=>{
+        let timeout=setTimeout(()=>{
         quotation.innerText=quotation.innerText+letter;
-        },20*index);})
-    author.innerText=authors[value];}
-    isSame=value;
-    localStorage.setItem('storedQuote', value);
+        },10*idx);runTimeout.push(timeout);})
+        author.innerText='\u2014'+' '+quotes[index].author;
+        isSame=index;
+    }
+    //storedIndex=localStorage.getItem('index');
+    
    
-}
 
 
 quote.addEventListener('click', () => {
@@ -148,5 +152,9 @@ links.forEach((link)=> {
 
 window.addEventListener('load', ()=>{
     getQuote();
+    
+   
+    
+
 
 })

@@ -3,4 +3,4 @@ let quotes = {
     'Martin F. Fischer': "We humans are the greatest of earth's parasites.",
 }
 
-let array =['J. Robert Oppenheimer','Martin F. Fischer']
+let authors =['J. Robert Oppenheimer','Martin F. Fischer']

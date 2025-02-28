@@ -76,7 +76,7 @@ body{
 }
 
 .name{
-  font-size: 3rem;
+  font-size: 3em;
   width: auto;
   font-weight: 900;
 }
@@ -97,9 +97,9 @@ body{
   border: solid #9F9F9F 2px;
   border-radius: 15px;
   height:auto;
-  width: 50rem;
+  width: 50em;
   padding: 5px;
-  font-size: 1rem;
+  font-size: 1em;
  box-shadow: rgb(183, 31, 31);
   text-align: center;
 }
@@ -132,7 +132,7 @@ body{
 }
 
 .container img{
-  width: 10rem;
+  width: 10em;
   height: auto;
 }
 

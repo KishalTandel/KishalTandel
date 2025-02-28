@@ -96,19 +96,19 @@ body{
   border: solid #9F9F9F 0.01em;
   border-radius: 0.5em;
   height:auto;
-  width: 35em;
-  padding: 5px;
+  width: 34em;
+  padding: 0.75em;
   font-size: 1.25em;
   transition: background-color 0.5 ease, color 0.5 ease;
   text-align: center;
-  line-height: 1.25rem;
+  line-height: 0.75em;
   white-space: pre-wrap; 
   z-index: 10;
 
 }
 
 .quote p{
-  line-height: 2rem;
+  line-height: 2.5em;
 }
 
 .card_container{
@@ -151,6 +151,9 @@ body{
   align-items: center;
 }
 
+.quote .author{
+  font-weight: 900;
+}
 
 
 

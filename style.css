@@ -9,17 +9,21 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family:  Montserrat;
 
 }
 
 .nav_bar{
   position: fixed;
+  top: 0;
   left: 0;
   display: flex;
   justify-content: space-between;
   height: 10vmin;
   width: 100%;
   transition: transform 0.5s ease;
+  transform: translateY(-100%);
+  z-index: 1000;
 }
 
 .web_link{
@@ -28,8 +32,9 @@ body{
   align-items: center;
   width: auto;
   margin-left: 2vmin;
-  font-size: 3.6vmin;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 5vmin;
+  font-family:  Montserrat;
+  color: rgb(196, 190, 190);
 }
 
 .sub_nav{
@@ -38,6 +43,7 @@ body{
   justify-content: space-evenly;
   align-items: center;
   font-size: 2.7vmin;
+  color:rgb(120, 164, 212);
 }
 
 .dark{
@@ -70,9 +76,8 @@ body{
 }
 
 .name{
-  font-size: 4vmin;
+  font-size: 3rem;
   width: auto;
-  font-family: monospace;
   font-weight: 900;
 }
 
@@ -88,11 +93,15 @@ body{
 }
 
 .quote{
+  display: flex;
   border: solid #9F9F9F 2px;
   border-radius: 15px;
   height:auto;
-  width: 60%;
+  width: 50rem;
   padding: 5px;
+  font-size: 1rem;
+ box-shadow: rgb(183, 31, 31);
+  text-align: center;
 }
 
 .card_container{
@@ -123,7 +132,7 @@ body{
 }
 
 .container img{
-  width: 30%;
+  width: 10rem;
   height: auto;
 }
 

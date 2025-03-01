@@ -1,6 +1,6 @@
 *{
-  margin: 0;
-  padding: 0;
+  margin: 0em;
+  padding: 0em;
 }
 
 body{
@@ -9,21 +9,20 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family:  Montserrat;
+  font-family:  Helvetica, sans-serif,Arial;
 
 }
 
 .nav_bar{
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0em;
+  left: 0em;
   display: flex;
   justify-content: space-between;
-  height: 10vmin;
+  height: 3.3em;
   width: 100%;
   transition: transform 0.5s ease;
   transform: translateY(-100%);
-  z-index: 1000;
 }
 
 .web_link{
@@ -31,8 +30,8 @@ body{
   justify-content: left;
   align-items: center;
   width: auto;
-  margin-left: 2vmin;
-  font-size: 5vmin;
+  margin-left: 0.5em;
+  font-size: 1.8em;
   font-family:  Montserrat;
 }
 
@@ -41,7 +40,7 @@ body{
   width: 50%;
   justify-content: space-evenly;
   align-items: center;
-  font-size: 2.7vmin;
+  font-size: 1.2em;
 
 }
 
@@ -67,24 +66,23 @@ body{
 .container{
   display: flex;
   flex-direction: column;
-  width: 20vmin;
   justify-content: space-evenly;
-  height: auto;
-  width: auto;
+  height: 11.5em;
   align-items: center;
 }
 
 .name{
-  font-size: 2.5em;
+  font-size: 2.3em;
   width: auto;
-  font-weight: 900;
+  font-weight: 500;
 }
 
 .links{
-  width: 20vmin;
+  width: 12em;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  font-size: 1.1em;
 }
 
 .favicon{
@@ -93,44 +91,42 @@ body{
 
 .quote{
   display: flexbox;
-  border: solid #9F9F9F 0.01em;
+  border: solid 0.01em;
   border-radius: 0.5em;
   height:auto;
-  width: 34em;
+  width: 40em;
   padding: 0.75em;
-  font-size: 1.25em;
+  font-size: 1.10em;
   transition: background-color 0.5 ease, color 0.5 ease;
   text-align: center;
-  line-height: 0.75em;
+  line-height: 0.5em;
   white-space: pre-wrap; 
-  z-index: 10;
 
 }
 
 .quote p{
-  line-height: 2.5em;
+  line-height: 2em;
 }
 
 .card_container{
-  width: 44em;
+  margin-top: 1em;
+  width: 45.5em;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: top;
-  align-items:space-between;
-  height: 160vmin;
+  align-items:space-around;
+  height: 70em;
   border-radius: 0.5em;
 }
 
 .card{
   display: flex;
-  width:21.75em;
-  border: solid white 0.01em;
-  height: 30vmin;
+  width:22.40em;
+  border: solid 0.01em;
+  height: 15em;
   margin-top:0.25em;
-  border-radius: 5px;
-  border-color:#1c1c1c;
-  background-color: rgb(240,240,240);
+  border-radius: 0.5em;
 
 }
 
@@ -141,7 +137,7 @@ body{
 }
 
 .container img{
-  width: 8em;
+  width: 7em;
   height: auto;
 }
 
@@ -152,7 +148,16 @@ body{
 }
 
 .quote .author{
-  font-weight: 900;
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.about{
+  line-height: 1.5em;
+  width: 22.40em;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+ 
 }
 
 

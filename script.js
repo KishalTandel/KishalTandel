@@ -141,20 +141,15 @@ quote.addEventListener('click', () => {
 
 
 links.forEach((link)=> {
-    link.addEventListener('click', ()=> {
-        console.log('was clicked');
-        container.scrollIntoView({
-            block: 'start',
-            behaviour: 'smooth',
-        });
-    })
+    link.addEventListener('click', scrollToTop)
 })
+function scrollToTop(){
+    function step(){
+        window.scrollBy(0,-30);
+        if(window.scrollY>0){ requestAnimationFrame(step)}
+    } requestAnimationFrame(step)
+}
 
 window.addEventListener('load', ()=>{
     getQuote();
-    
-   
-    
-
-
 })

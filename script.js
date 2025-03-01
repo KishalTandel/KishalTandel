@@ -26,7 +26,7 @@ let setTheme = (theme) => {
    if (theme === 'dark'){
        body.classList.remove("light")
        body.classList.add("dark")
-       //toggle.innerHTML='<img src="7795651_weather_day_sun_icon.png";/>'
+       toggle.innerHTML='<img src="assets/toggle_icon/dark/sun_filled.png">'
        navBar.style.backgroundColor = '#212125';
        navBar.style.borderBottom = 'solid #1a1a1a 0.5vmin';
        quote.style.backgroundColor='rgb(35, 35, 41)';
@@ -47,12 +47,12 @@ let setTheme = (theme) => {
     } else{
         body.classList.remove("dark")
         body.classList.add("light")
-        //toggle.innerHTML = '<img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/moon-symbol.png" alt="moon-symbol"/>'
+        toggle.innerHTML = '<img  src="assets/toggle_icon/light/moon_filled.png">'
         navBar.style.backgroundColor =  '#ececea';
         navBar.style.borderBottom ='solid #b8b8b8 0.5vmin';
         quote.style.backgroundColor='rgb(240, 240, 240)';
         quote.style.borderColor = '#1a1a1a';
-        subNav.style.color='rgb(9, 54, 103)';
+        subNav.style.color='rgb(5, 73, 145)';
         links.forEach((link) => {
         link.style.color='rgb(22, 22, 22)';
        });

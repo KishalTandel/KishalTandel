@@ -62,7 +62,7 @@ body{
   width: 1.3em;
   height: auto;
 }
-.toggle,.github,.CV,.favicon img:hover{
+.links a,.toggle img,.github,.CV,.favicon img:hover{
   cursor: pointer;
   opacity: 0.8;
 }
@@ -131,6 +131,7 @@ body{
   height: 15em;
   margin-top:0.25em;
   border-radius: 0.5em;
+  transition: background-color 0.5 ease, color 0.5 ease;
 
 }
 
@@ -161,10 +162,86 @@ body{
   width: 22.40em;
   margin-left: 0.25em;
   margin-right: 0.25em;
+  font-size: 1em;
  
 }
 
+.quote:hover{
+  cursor: pointer;
+}
 
+@media (max-width:800px){
+ 
+html,body{
+  overflow-x:hidden;
+}
 
+body{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.nav_bar{
+  height:2em;
+}
+
+.web_link{
+  font-size: 1em;
+}
+
+.sub_nav{
+  font-size: 0.7em;
+}
+
+.toggle img{
+  width:1em;
+  height: auto;
+}
+
+.container{
+  height: 5em;
+}
+
+.name{
+  font-size: 1.5em;
+}
+
+.links{
+  width:10em;
+  font-size: 0.8em;
+}
+
+.favicon img{
+  width:5em;
+  height: auto;
+}
+
+.quote{
+  margin-top: 2em;
+  width: 28em;
+  font-size: 0.6em;
+  border-radius: 0.25em;
+}
+
+.card_container{
+  
+  width: 17.5em;
+  height:auto
+}
+
+.about{
+  font-size: 0.75em;
+  text-align: left;
+  line-height: 1.4em;
+  width:23.5em;
+}
+
+.card{
+  width:17.5em;
+  border-radius: 0.25em;
+}
+}
 
 

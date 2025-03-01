@@ -38,6 +38,8 @@ let setTheme = (theme) => {
        cards.forEach((card)=>{
         card.style.borderColor='#9f9f9f';
         card.style.backgroundColor='rgb(35, 35, 41)';});
+        //cards.forEach((card)=>{
+          //  card.style.transition="border-color 0.5s ease, color 0.5 ease";});
        (async () => {
         favIcon.style.opacity='0.5';
         await switchFavIcon();
@@ -59,6 +61,8 @@ let setTheme = (theme) => {
         cards.forEach((card)=>{
             card.style.borderColor='#1a1a1a';
              card.style.backgroundColor='rgb(240, 240, 240)';});
+             //cards.forEach((card)=>{
+               // card.style.transition="border-color 0.5s ease, color 0.5 ease";});
         (async ()=>{  //IIFE
             favIcon.style.opacity='0.5';
             await switchFavIcon();
@@ -73,7 +77,9 @@ quote.style.transition='border-color 0.5s ease';
 quote.style.transition='background-color 0.5s ease, color 0.25s ease';
 
 cards.forEach((card)=>{
-    card.style.transition="border-color 0.5s ease";});
+    card.style.transition='border-color 0.5s ease';
+    card.style.transition='background-color 0.5s ease, color 0.25s ease'});
+    
 
 if (storedTheme){
     setTheme(storedTheme);

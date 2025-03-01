@@ -58,6 +58,10 @@ body{
   display: none;
 }
 
+.toggle img{
+  width: 1.3em;
+  height: auto;
+}
 .toggle,.github,.CV,.favicon img:hover{
   cursor: pointer;
   opacity: 0.8;

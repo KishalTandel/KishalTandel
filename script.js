@@ -3,6 +3,7 @@ let toggle = document.querySelector(".toggle");
 let navBar = document.querySelector(".nav_bar");
 let name = document.querySelector('.name');
 let favIcon = document.querySelector(".favicon");
+let img = document.querySelector(".favicon img");
 let container = document.querySelector(".container");
 let quote = document.querySelector(".quote")
 let cards= document.querySelectorAll(".card");
@@ -10,7 +11,10 @@ let links = document.querySelectorAll(".web_link p");
 let subNav = document.querySelector(".sub_nav");
 let quotation = document.querySelector('.quotation');
 let author = document.querySelector('.author');
-
+const darkIcon = new Image();
+darkIcon.src="assets/favicon/dark/favicon_512.png";
+const lightIcon = new Image();
+lightIcon.src="assets/favicon/light/favicon_512.png";
 
 let storedTheme = localStorage.getItem('theme');
 let isSystemModeDark = window.matchMedia('(prefers-color-scheme:dark)').matches;
@@ -23,17 +27,12 @@ let switchFavIcon = () => {
     });
 } 
 
-function rotate() {
-    toggle.img.style.rotate='360 2s'
-}
 
 let setTheme = (theme) => {
    if (theme === 'dark'){
        body.classList.remove("light")
        body.classList.add("dark")
        toggle.innerHTML='<img src="assets/toggle_icon/dark/sun_filled.png" rel="preload">'
-       setTimeout(rotate,100)
-       document.querySelector('.toggle img').style.animation='rotate(360) 3s infinite'
        navBar.style.backgroundColor = '#212125';
        navBar.style.borderBottom = 'solid #1a1a1a 0.5vmin';
        quote.style.backgroundColor='rgb(35, 35, 41)';
@@ -50,7 +49,7 @@ let setTheme = (theme) => {
        (async () => {
         favIcon.style.opacity='0.5';
         await switchFavIcon();
-        favIcon.innerHTML='<img src="assets/favicon/dark/favicon_512.png" rel="preload">';
+        img.src=darkIcon.src;
         favIcon.style.opacity='1';
         })();  
     } else{
@@ -73,7 +72,7 @@ let setTheme = (theme) => {
         (async ()=>{  //IIFE
             favIcon.style.opacity='0.5';
             await switchFavIcon();
-            favIcon.innerHTML='<img src="assets/favicon/light/favicon_512.png" rel="preload">';
+            img.src=lightIcon.src;
             favIcon.style.opacity='1';
         })();
     }
@@ -139,7 +138,7 @@ let getQuote = () => {
         arr.forEach((letter,idx)=>{
         let timeout=setTimeout(()=>{
         quotation.innerText=quotation.innerText+letter;
-        },5*idx);runTimeout.push(timeout);})
+        },10*idx);runTimeout.push(timeout);})
         author.innerText='\u2014'+' '+quotes[index].author;
         isSame=index;
     }

@@ -7,9 +7,10 @@ let container = document.querySelector(".container");
 let quote = document.querySelector(".quote")
 let cards= document.querySelectorAll(".card");
 let links = document.querySelectorAll(".web_link p");
-let subNav=document.querySelector(".sub_nav");
-let quotation=document.querySelector('.quotation');
-let author=document.querySelector('.author');
+let subNav = document.querySelector(".sub_nav");
+let quotation = document.querySelector('.quotation');
+let author = document.querySelector('.author');
+
 
 let storedTheme = localStorage.getItem('theme');
 let isSystemModeDark = window.matchMedia('(prefers-color-scheme:dark)').matches;
@@ -22,11 +23,17 @@ let switchFavIcon = () => {
     });
 } 
 
+function rotate() {
+    toggle.img.style.rotate='360 2s'
+}
+
 let setTheme = (theme) => {
    if (theme === 'dark'){
        body.classList.remove("light")
        body.classList.add("dark")
        toggle.innerHTML='<img src="assets/toggle_icon/dark/sun_filled.png">'
+       setTimeout(rotate,100)
+       document.querySelector('.toggle img').style.animation='rotate(360) 3s infinite'
        navBar.style.backgroundColor = '#212125';
        navBar.style.borderBottom = 'solid #1a1a1a 0.5vmin';
        quote.style.backgroundColor='rgb(35, 35, 41)';
@@ -72,9 +79,11 @@ let setTheme = (theme) => {
     }
 }
 
+
+
 navBar.style.transition='background-color 0.5s ease, border-bottom 0.5s ease,transform 0.5s ease';
 quote.style.transition='border-color 0.5s ease';
-quote.style.transition='background-color 0.5s ease, color 0.25s ease';
+quote.style.transition='background-color 0.5s ease, color 0.10s ease';
 
 cards.forEach((card)=>{
     card.style.transition='border-color 0.5s ease';
@@ -105,11 +114,9 @@ window.addEventListener('scroll', () => {
     if(container.getBoundingClientRect().bottom<0 ){ 
         navBar.style.transform='translateY(0%)';
         navBar.style.top=0
-       // if (navBar.getBoundingClientRect().top<=container.getBoundingClientRect().bottom){navBar.style.transform='translateY(-100%)';}
     } else if(navBar.getBoundingClientRect().top===0){
         navBar.style.transform='translateY(-100%)';
-    }//else if()  
-    else if(window.scrollY===0) {navBar.style.transform='translateY(-100%)';}
+    }else if(window.scrollY===0) {navBar.style.transform='translateY(-100%)';}
 });
 
 
@@ -132,11 +139,10 @@ let getQuote = () => {
         arr.forEach((letter,idx)=>{
         let timeout=setTimeout(()=>{
         quotation.innerText=quotation.innerText+letter;
-        },10*idx);runTimeout.push(timeout);})
+        },5*idx);runTimeout.push(timeout);})
         author.innerText='\u2014'+' '+quotes[index].author;
         isSame=index;
     }
-    //storedIndex=localStorage.getItem('index');
     
    
 
@@ -156,6 +162,8 @@ function scrollToTop(){
     } requestAnimationFrame(step)
 }
 
+
 window.addEventListener('load', ()=>{
-    getQuote();
+    body.style.opacity='1';
+    setTimeout(getQuote,500);
 })

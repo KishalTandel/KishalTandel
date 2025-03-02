@@ -166,7 +166,12 @@ function scrollToTop(){
 }
 
 
+
 window.addEventListener('load', ()=>{
-    body.style.opacity='1';
-    setTimeout(getQuote,500);
+    (async()=>{
+        await darkIcon.decode();
+        await lightIcon.decode();
+    })();
+      body.style.opacity='1';
+      setTimeout(getQuote,500);
 })

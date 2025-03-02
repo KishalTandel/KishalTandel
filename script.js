@@ -18,6 +18,15 @@ const lightIcon = new Image();
 //await lightIcon.decode();
 lightIcon.src="assets/favicon/light/favicon_512.png";
 
+window.addEventListener('load', ()=>{
+    (async()=>{
+        await darkIcon.decode();
+        await lightIcon.decode();
+    })();
+      body.style.opacity='1';
+      setTimeout(getQuote,500);
+})
+
 let storedTheme = localStorage.getItem('theme');
 let isSystemModeDark = window.matchMedia('(prefers-color-scheme:dark)').matches;
 
@@ -113,6 +122,8 @@ favIcon.addEventListener('click', () => {
     localStorage.setItem('theme' , newTheme) ;
 });
 
+//To track container without using Intersection Observer API
+/*
 window.addEventListener('scroll', () => {
     if(container.getBoundingClientRect().bottom<0 ){ 
         navBar.style.transform='translateY(0%)';
@@ -121,8 +132,21 @@ window.addEventListener('scroll', () => {
         navBar.style.transform='translateY(-100%)';
     }else if(window.scrollY===0) {navBar.style.transform='translateY(-100%)';}
 });
+*/
 
+let object ={
+    threshold: 0.00000001
+};
 
+let callBack= (entries) => {
+    if (!(entries[0].isIntersecting)){
+        navBar.style.transform='translateY(0%)';
+        navBar.style.top=0}else{
+        navBar.style.transform='translateY(-100%)'}
+}
+
+let obj= new IntersectionObserver(callBack,object);
+obj.observe(container);
 
 let storedIndex=-1;
 let isSame=-1;
@@ -166,7 +190,7 @@ function scrollToTop(){
 }
 
 
-
+/*
 window.addEventListener('load', ()=>{
     (async()=>{
         await darkIcon.decode();
@@ -174,4 +198,4 @@ window.addEventListener('load', ()=>{
     })();
       body.style.opacity='1';
       setTimeout(getQuote,500);
-})
+})*/

@@ -31,7 +31,7 @@ let setTheme = (theme) => {
    if (theme === 'dark'){
        body.classList.remove("light")
        body.classList.add("dark")
-       toggle.innerHTML='<img src="assets/toggle_icon/dark/sun_filled.png">'
+       toggle.innerHTML='<img src="assets/toggle_icon/dark/sun_filled.png" rel="preload">'
        setTimeout(rotate,100)
        document.querySelector('.toggle img').style.animation='rotate(360) 3s infinite'
        navBar.style.backgroundColor = '#212125';
@@ -50,13 +50,13 @@ let setTheme = (theme) => {
        (async () => {
         favIcon.style.opacity='0.5';
         await switchFavIcon();
-        favIcon.innerHTML='<img src="assets/favicon/dark/favicon_512.png">';
+        favIcon.innerHTML='<img src="assets/favicon/dark/favicon_512.png" rel="preload">';
         favIcon.style.opacity='1';
         })();  
     } else{
         body.classList.remove("dark")
         body.classList.add("light")
-        toggle.innerHTML = '<img  src="assets/toggle_icon/light/moon_filled.png">'
+        toggle.innerHTML = '<img  src="assets/toggle_icon/light/moon_filled.png" rel="preload">'
         navBar.style.backgroundColor =  '#ececea';
         navBar.style.borderBottom ='solid #b8b8b8 0.5vmin';
         quote.style.backgroundColor='rgb(240, 240, 240)';
@@ -73,7 +73,7 @@ let setTheme = (theme) => {
         (async ()=>{  //IIFE
             favIcon.style.opacity='0.5';
             await switchFavIcon();
-            favIcon.innerHTML='<img src="assets/favicon/light/favicon_512.png">';
+            favIcon.innerHTML='<img src="assets/favicon/light/favicon_512.png" rel="preload">';
             favIcon.style.opacity='1';
         })();
     }

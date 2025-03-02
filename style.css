@@ -4,7 +4,7 @@
 }
 
 body{
-  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease,opacity 1s ease;
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease,opacity 1.5s ease;
   
   display: flex;
   flex-direction: column;
@@ -74,6 +74,7 @@ body{
   justify-content: space-evenly;
   height: 11.5em;
   align-items: center;
+  height: auto;
 }
 
 .name{
@@ -106,7 +107,7 @@ body{
   text-align: center;
   line-height: 0.5em;
   white-space: pre-wrap; 
-  min-height: 2em;
+  min-height: 5em;
 
 }
 
@@ -168,8 +169,10 @@ body{
  
 }
 
+
 .quote:hover{
   cursor: pointer;
+  opacity: 0.90;
 }
 
 
@@ -211,10 +214,6 @@ body{
   height: auto;
 }
 
-.container{
-  height: 5em;
-}
-
 .name{
   font-size: 1.5em;
 }
@@ -230,7 +229,7 @@ body{
 }
 
 .quote{
-  margin-top: 2em;
+
   width: 28em;
   font-size: 0.6em;
   border-radius: 0.25em;

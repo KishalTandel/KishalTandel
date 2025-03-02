@@ -12,8 +12,10 @@ let subNav = document.querySelector(".sub_nav");
 let quotation = document.querySelector('.quotation');
 let author = document.querySelector('.author');
 const darkIcon = new Image();
+//await darkIcon.decode()
 darkIcon.src="assets/favicon/dark/favicon_512.png";
 const lightIcon = new Image();
+//await lightIcon.decode();
 lightIcon.src="assets/favicon/light/favicon_512.png";
 
 let storedTheme = localStorage.getItem('theme');
@@ -49,6 +51,7 @@ let setTheme = (theme) => {
        (async () => {
         favIcon.style.opacity='0.5';
         await switchFavIcon();
+        await darkIcon.decode();
         img.src=darkIcon.src;
         favIcon.style.opacity='1';
         })();  
@@ -72,6 +75,7 @@ let setTheme = (theme) => {
         (async ()=>{  //IIFE
             favIcon.style.opacity='0.5';
             await switchFavIcon();
+            await lightIcon.decode();
             img.src=lightIcon.src;
             favIcon.style.opacity='1';
         })();

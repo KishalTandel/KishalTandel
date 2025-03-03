@@ -7,12 +7,15 @@
     <meta name="description" content="My Personal Website">
     <meta name="author" content="KishalTandel">
     <title>Kishal Tandel</title>
-    <link rel="stylesheet" href="style.css">    
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="preload" as="image" href="assets/favicon/light/favicon_512.png">
+    <link rel="preload" as="image" href="assets/favicon/dark/favicon_512.png">   
 </head>
 
 <body>
     <div class="info_container">
-        <div class="favicon"><img/></div>
+        <div class="favicon"><img src="assets/favicon/dark/favicon_512.png" style="position:absolute" class="hide" id="dark"/>
+            <img  src="assets/favicon/light/favicon_512.png" style="position:absolute" class="hide" id="light"></div>
         <div class="name">Kishal Tandel</div>
         <div class="links">
             <a>CV</a>

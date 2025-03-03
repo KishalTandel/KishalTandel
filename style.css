@@ -167,12 +167,6 @@ body{
 }
 
 
-.quote_container:hover{
-  cursor : pointer;
-  opacity : 0.90;
-  box-shadow : white;
-}
-
 @media (max-width:800px){
  
 html,body{

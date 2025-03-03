@@ -46,7 +46,7 @@ let setTheme = (theme) => {
        quoteContainer.style.backgroundColor='rgb(35, 35, 41)';
        quoteContainer.style.borderColor = '#9f9f9f';
        subNav.style.color='rgb(120, 164, 212)';
-       links.forEach((link) => {
+       subLinks.forEach((link) => {
         link.style.color='rgb(196, 190, 190)';
        });
        cards.forEach((card)=>{

@@ -3,22 +3,20 @@ let toggle = document.querySelector(".toggle");
 let navBar = document.querySelector(".nav_bar");
 let name = document.querySelector('.name');
 let favIcon = document.querySelector(".favicon");
-let img = document.querySelector(".favicon img");
-let container = document.querySelector(".container");
-let quote = document.querySelector(".quote")
-let cards= document.querySelectorAll(".card");
-let links = document.querySelectorAll(".web_link p");
+let img = document.querySelector(".favicon img")
+let infoContainer = document.querySelector(".info_container");
+let quoteContainer = document.querySelector(".quote_container")
+let cards = document.querySelectorAll(".card");
+let subLinks = document.querySelectorAll(".web_link p");
 let subNav = document.querySelector(".sub_nav");
 let quotation = document.querySelector('.quotation');
 let author = document.querySelector('.author');
 const darkIcon = new Image();
-//await darkIcon.decode()
-darkIcon.src="assets/favicon/dark/favicon_512.png";
+darkIcon.src = "assets/favicon/dark/favicon_512.png";
 const lightIcon = new Image();
-//await lightIcon.decode();
-lightIcon.src="assets/favicon/light/favicon_512.png";
+lightIcon.src = "assets/favicon/light/favicon_512.png";
 
-window.addEventListener('load', ()=>{
+window.addEventListener('load', () => {
     (async()=>{
         await darkIcon.decode();
         await lightIcon.decode();
@@ -38,7 +36,6 @@ let switchFavIcon = () => {
     });
 } 
 
-
 let setTheme = (theme) => {
    if (theme === 'dark'){
        body.classList.remove("light")
@@ -46,8 +43,8 @@ let setTheme = (theme) => {
        toggle.innerHTML='<img src="assets/toggle_icon/dark/sun_filled.png" rel="preload">'
        navBar.style.backgroundColor = '#212125';
        navBar.style.borderBottom = 'solid #1a1a1a 0.5vmin';
-       quote.style.backgroundColor='rgb(35, 35, 41)';
-       quote.style.borderColor = '#9f9f9f';
+       quoteContainer.style.backgroundColor='rgb(35, 35, 41)';
+       quoteContainer.style.borderColor = '#9f9f9f';
        subNav.style.color='rgb(120, 164, 212)';
        links.forEach((link) => {
         link.style.color='rgb(196, 190, 190)';
@@ -55,8 +52,6 @@ let setTheme = (theme) => {
        cards.forEach((card)=>{
         card.style.borderColor='#9f9f9f';
         card.style.backgroundColor='rgb(35, 35, 41)';});
-        //cards.forEach((card)=>{
-          //  card.style.transition="border-color 0.5s ease, color 0.5 ease";});
        (async () => {
         favIcon.style.opacity='0.5';
         await switchFavIcon();
@@ -70,18 +65,16 @@ let setTheme = (theme) => {
         toggle.innerHTML = '<img  src="assets/toggle_icon/light/moon_filled.png" rel="preload">'
         navBar.style.backgroundColor =  '#ececea';
         navBar.style.borderBottom ='solid #b8b8b8 0.5vmin';
-        quote.style.backgroundColor='rgb(240, 240, 240)';
-        quote.style.borderColor = '#1a1a1a';
+        quoteContainer.style.backgroundColor='rgb(240, 240, 240)';
+        quoteContainer.style.borderColor = '#1a1a1a';
         subNav.style.color='rgb(5, 73, 145)';
-        links.forEach((link) => {
+        subLinks.forEach((link) => {
         link.style.color='rgb(22, 22, 22)';
        });
         cards.forEach((card)=>{
             card.style.borderColor='#1a1a1a';
              card.style.backgroundColor='rgb(240, 240, 240)';});
-             //cards.forEach((card)=>{
-               // card.style.transition="border-color 0.5s ease, color 0.5 ease";});
-        (async ()=>{  //IIFE
+        (async ()=>{  
             favIcon.style.opacity='0.5';
             await switchFavIcon();
             await lightIcon.decode();
@@ -94,8 +87,8 @@ let setTheme = (theme) => {
 
 
 navBar.style.transition='background-color 0.5s ease, border-bottom 0.5s ease,transform 0.5s ease';
-quote.style.transition='border-color 0.5s ease';
-quote.style.transition='background-color 0.5s ease, color 0.10s ease';
+quoteContainer.style.transition='border-color 0.5s ease';
+quoteContainer.style.transition='background-color 0.5s ease, color 0.10s ease';
 
 cards.forEach((card)=>{
     card.style.transition='border-color 0.5s ease';
@@ -122,20 +115,8 @@ favIcon.addEventListener('click', () => {
     localStorage.setItem('theme' , newTheme) ;
 });
 
-//To track container without using Intersection Observer API
-/*
-window.addEventListener('scroll', () => {
-    if(container.getBoundingClientRect().bottom<0 ){ 
-        navBar.style.transform='translateY(0%)';
-        navBar.style.top=0
-    } else if(navBar.getBoundingClientRect().top===0){
-        navBar.style.transform='translateY(-100%)';
-    }else if(window.scrollY===0) {navBar.style.transform='translateY(-100%)';}
-});
-*/
-
 let object ={
-    threshold: 0.00000001
+    threshold: 0
 };
 
 let callBack= (entries) => {
@@ -146,12 +127,12 @@ let callBack= (entries) => {
 }
 
 let obj= new IntersectionObserver(callBack,object);
-obj.observe(container);
+obj.observe(infoContainer);
 
 let storedIndex=-1;
 let isSame=-1;
 let runTimeout=[];
-let index;
+
 
 let getQuote = () => {
     do{
@@ -171,15 +152,13 @@ let getQuote = () => {
         isSame=index;
     }
     
-   
 
-
-quote.addEventListener('click', () => {
+quoteContainer.addEventListener('click', () => {
    getQuote();
 });
 
 
-links.forEach((link)=> {
+subLinks.forEach((link)=> {
     link.addEventListener('click', scrollToTop)
 })
 function scrollToTop(){
@@ -189,13 +168,3 @@ function scrollToTop(){
     } requestAnimationFrame(step)
 }
 
-
-/*
-window.addEventListener('load', ()=>{
-    (async()=>{
-        await darkIcon.decode();
-        await lightIcon.decode();
-    })();
-      body.style.opacity='1';
-      setTimeout(getQuote,500);
-})*/

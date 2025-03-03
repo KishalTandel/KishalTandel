@@ -11,35 +11,21 @@ let subLinks = document.querySelectorAll(".web_link p");
 let subNav = document.querySelector(".sub_nav");
 let quotation = document.querySelector('.quotation');
 let author = document.querySelector('.author');
-const darkIcon = new Image();
-darkIcon.src = "assets/favicon/dark/favicon_512.png";
-const lightIcon = new Image();
-lightIcon.src = "assets/favicon/light/favicon_512.png";
+let dark = document.getElementById('dark');
+let light = document.getElementById('light');
 
-window.addEventListener('load', () => {
-    (async()=>{
-        await darkIcon.decode();
-        await lightIcon.decode();
-    })();
-      body.style.opacity='1';
-      setTimeout(getQuote,500);
-})
+
 
 let storedTheme = localStorage.getItem('theme');
 let isSystemModeDark = window.matchMedia('(prefers-color-scheme:dark)').matches;
 
-let switchFavIcon = () => {
-    return new Promise((resolve) => {
-        setTimeout(()=> {
-            resolve('resolved')}, 
-            150);
-    });
-} 
-
 let setTheme = (theme) => {
    if (theme === 'dark'){
+       toggle.classList.remove('hide')
        body.classList.remove("light")
        body.classList.add("dark")
+       dark.classList.remove('hide');
+       light.classList.add('hide');
        toggle.innerHTML='<img src="assets/toggle_icon/dark/sun_filled.png" rel="preload">'
        navBar.style.backgroundColor = '#212125';
        navBar.style.borderBottom = 'solid #1a1a1a 0.5vmin';
@@ -52,16 +38,11 @@ let setTheme = (theme) => {
        cards.forEach((card)=>{
         card.style.borderColor='#9f9f9f';
         card.style.backgroundColor='rgb(35, 35, 41)';});
-       (async () => {
-        favIcon.style.opacity='0.5';
-        await switchFavIcon();
-        await darkIcon.decode();
-        img.src=darkIcon.src;
-        favIcon.style.opacity='1';
-        })();  
     } else{
         body.classList.remove("dark")
         body.classList.add("light")
+        light.classList.remove('hide');
+        dark.classList.add('hide');
         toggle.innerHTML = '<img  src="assets/toggle_icon/light/moon_filled.png" rel="preload">'
         navBar.style.backgroundColor =  '#ececea';
         navBar.style.borderBottom ='solid #b8b8b8 0.5vmin';
@@ -74,13 +55,6 @@ let setTheme = (theme) => {
         cards.forEach((card)=>{
             card.style.borderColor='#1a1a1a';
              card.style.backgroundColor='rgb(240, 240, 240)';});
-        (async ()=>{  
-            favIcon.style.opacity='0.5';
-            await switchFavIcon();
-            await lightIcon.decode();
-            img.src=lightIcon.src;
-            favIcon.style.opacity='1';
-        })();
     }
 }
 
@@ -168,3 +142,6 @@ function scrollToTop(){
     } requestAnimationFrame(step)
 }
 
+window.addEventListener('load', () => {
+    getQuote();
+})

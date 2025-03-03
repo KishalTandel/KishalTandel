@@ -10,8 +10,10 @@ body{
   justify-content : center;
   align-items : center;
   font-family :  Helvetica, sans-serif,Arial;
-  opacity: 0;
+
 }
+
+
 
 .nav_bar{
   position : fixed;
@@ -58,6 +60,11 @@ body{
   display : none;
 }
 
+.toggle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .toggle img{
   width : 1.3em;
   height : auto;
@@ -70,16 +77,22 @@ body{
 .info_container{
   display : flex;
   flex-direction : column;
-  justify-content : space-evenly;
+  justify-content : space-between;
   height : 11.5em;
   align-items : center;
-  height : auto;
+  height : 8em;
+  margin-top: 1.5em;
 }
 
+.favicon img{
+  margin-top: 3em;
+}
 .name{
   font-size : 2.3em;
   width : auto;
   font-weight : 500;
+  margin-top: 1.5em;
+ 
 }
 
 .links{
@@ -90,24 +103,22 @@ body{
   font-size : 1.1em;
 }
 
-.favicon{
-  transition : opacity 0.35s ease-in-out;
-}
 
 .quote_container{
   display : flexbox;
   border : solid 0.01em;
   border-radius : 0.5em;
   height :auto ;
-  width : 40em;
-  padding : 0.75em;
-  font-size : 1.10em;
+  width : 50em;
+  padding : 0.25em;
+  font-size : 0.9em;
   transition : background-color 0.5 ease, color 0.5 ease;
   text-align : center;
   line-height : 0.5em;
   white-space : pre-wrap; 
-  min-height : 6.9em;
+  min-height : 7.2em;
   transition : boxshadow 2s ease;
+  margin-top: -1em;
 }
 
 .quote_container p{
@@ -115,7 +126,7 @@ body{
 }
 
 .card_container{
-  margin-top : 1em;
+  margin-top: -0.5em;
   width : 45.5em;
   display : flex;
   flex-direction : column;
@@ -128,11 +139,11 @@ body{
 
 .card{
   display : flex;
-  width : 22.40em;
+  width : 22.50em;
   border : solid 0.01em;
   height : 15em;
   margin-top : 0.25em;
-  border-radius : 0.5em;
+  border-radius : 0.35em;
   transition : background-color 0.5 ease, color 0.5 ease;
 }
 
@@ -159,33 +170,26 @@ body{
 }
 
 .about{
-  line-height : 1.5em;
-  width : 22.40em;
+  line-height : 1.45em;
+  width : 22em;
   margin-left : 0.25em;
   margin-right : 0.25em;
   font-size : 1em;
 }
 
 
-@media (max-width:800px){
+@media (max-width:799px) {
  
 html,body{
   overflow-x : hidden;
 }
 
-body{
-  display : flex;
-  justify-content : center;
-  text-align : center;
-  align-items : center;
-}
-
 .nav_bar{
-  height :2em;
+  height :2.5em;
 }
 
 .web_link{
-  font-size : 1em;
+  font-size : 1.3em;
 }
 
 .sub_nav{
@@ -197,42 +201,53 @@ body{
   height : auto;
 }
 
+.info_container{
+  height:7.5em;
+}
 .name{
-  font-size : 1.5em;
+  margin-top: 2em;
+  font-size : 1.7em;
 }
 
 .links{
   width : 10em;
-  font-size : 0.8em;
+  font-size : 1em;
 }
 
 .favicon img{
-  width : 5em;
+  width : 6em;
   height : auto;
 }
 
 .quote_container{
   width : 28em;
-  font-size : 0.6em;
+  font-size : 0.8em;
   border-radius : 0.25em;
+  margin-top: -2em;
 }
 
 .card_container{
-  width : 17.5em;
-  height :auto
+  width : 22.8em;
+  height :auto;
+  flex-wrap: nowrap;
 }
 
 .about{
-  font-size : 0.75em;
+  font-size : 0.9em;
   text-align : left;
   line-height : 1.4em;
-  width : 23.5em;
+  width : 24.8em;
 }
 
 .card{
-  width : 17.5em;
+  width : 22.7em;
   border-radius : 0.25em;
 }
 } 
 
+@media (max-width :399px){
+  html,body{
+    overflow-x : hidden;
+  }
 
+}

@@ -4,7 +4,7 @@
 }
 
 body{
-  transition : background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease,opacity 1.5s ease;
+  transition : background-color 0s ease, color 0s ease, border-color 0s ease,opacity 0s ease;
   display : flex;
   flex-direction : column;
   justify-content : center;
@@ -23,10 +23,12 @@ body{
   justify-content : space-between;
   height : 3.3em;
   width : 100%;
-  transition : transform 0.5s ease;
+  
   transform : translateY(-100%);
   background-color: inherit;
   color: inherit;
+  transition: box-shadow 0.5s ease,border-color 0.5s ease,transform 0.25s ease;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .web_link{
@@ -58,6 +60,7 @@ body{
   color : #22222a;
 }
 
+
 .hide{
   display : none;
 }
@@ -73,7 +76,7 @@ body{
 }
 .links a,.toggle img,.github,.CV,.favicon img:hover{
   cursor : pointer;
-  opacity : 0.8;
+  opacity : 0.95;
 }
 
 .info_container{
@@ -111,7 +114,7 @@ body{
   border : solid 0.01em;
   border-radius : 0.5em;
   height :auto ;
-  width : 50em;
+  width : 49.5em;
   padding : 0.25em;
   font-size : 0.9em;
   transition : background-color 0.5 ease, color 0.5 ease;
@@ -119,8 +122,13 @@ body{
   line-height : 0.5em;
   white-space : pre-wrap; 
   min-height : 7.2em;
-  transition : boxshadow 2s ease;
   margin-top: -1em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.095);
+}
+
+.quote_container:hover,.card:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
 }
 
 .quote_container p{
@@ -141,14 +149,15 @@ body{
 
 .card{
   display : flex;
-  width : 22.50em;
+  width : 22.25em;
   border : solid 0.01em;
   height : 15em;
-  margin-top : 0.25em;
+  margin-top : 0.6em;
   border-radius : 0.35em;
   transition : background-color 0.5 ease, color 0.5 ease;
   background-color: inherit;
   color: inherit;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.095);
 }
 
 .web_link p{
@@ -174,11 +183,17 @@ body{
 }
 
 .about{
+  margin-top : 0.6em;
   line-height : 1.45em;
   width : 22em;
   margin-left : 0.25em;
   margin-right : 0.25em;
   font-size : 1em;
+}
+
+.favicon img{
+  width: 6em;
+  height: auto;
 }
 
 
@@ -219,7 +234,7 @@ html,body{
 }
 
 .favicon img{
-  width : 6em;
+  width : 4.5em;
   height : auto;
 }
 

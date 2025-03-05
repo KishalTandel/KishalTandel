@@ -1,3 +1,4 @@
+
 let body = document.body;
 let toggle = document.querySelector(".toggle");
 let navBar = document.querySelector(".nav_bar");
@@ -27,46 +28,36 @@ let setTheme = (theme) => {
        dark.classList.remove('hide');
        light.classList.add('hide');
        toggle.innerHTML='<img src="assets/toggle_icon/dark/sun_filled.png" rel="preload">'
-       navBar.style.backgroundColor = '#212125';
+  
        navBar.style.borderBottom = 'solid #1a1a1a 0.5vmin';
-       quoteContainer.style.backgroundColor='rgb(35, 35, 41)';
-       quoteContainer.style.borderColor = '#9f9f9f';
+       quoteContainer.style.backgroundColor='#22222a';
+       quoteContainer.style.borderColor = '#ffffff';
        subNav.style.color='rgb(120, 164, 212)';
        subLinks.forEach((link) => {
         link.style.color='rgb(196, 190, 190)';
        });
-       cards.forEach((card)=>{
-        card.style.borderColor='#9f9f9f';
-        card.style.backgroundColor='rgb(35, 35, 41)';});
     } else{
         body.classList.remove("dark")
         body.classList.add("light")
         light.classList.remove('hide');
         dark.classList.add('hide');
         toggle.innerHTML = '<img  src="assets/toggle_icon/light/moon_filled.png" rel="preload">'
-        navBar.style.backgroundColor =  '#ececea';
         navBar.style.borderBottom ='solid #b8b8b8 0.5vmin';
-        quoteContainer.style.backgroundColor='rgb(240, 240, 240)';
-        quoteContainer.style.borderColor = '#1a1a1a';
+        quoteContainer.style.backgroundColor='#ffffff';
+        quoteContainer.style.borderColor = '#22222a';
         subNav.style.color='rgb(5, 73, 145)';
         subLinks.forEach((link) => {
         link.style.color='rgb(22, 22, 22)';
        });
-        cards.forEach((card)=>{
-            card.style.borderColor='#1a1a1a';
-             card.style.backgroundColor='rgb(240, 240, 240)';});
     }
 }
 
 
 
-navBar.style.transition='background-color 0.5s ease, border-bottom 0.5s ease,transform 0.5s ease';
 quoteContainer.style.transition='border-color 0.5s ease';
 quoteContainer.style.transition='background-color 0.5s ease, color 0.10s ease';
 
-cards.forEach((card)=>{
-    card.style.transition='border-color 0.5s ease';
-    card.style.transition='background-color 0.5s ease, color 0.25s ease'});
+
     
 
 if (storedTheme){

@@ -25,6 +25,8 @@ body{
   width : 100%;
   transition : transform 0.5s ease;
   transform : translateY(-100%);
+  background-color: inherit;
+  color: inherit;
 }
 
 .web_link{
@@ -47,13 +49,13 @@ body{
 }
 
 .dark{
-  background-color : #212125;
-  color : #ececea; 
+  background-color : #22222a;
+  color : #ffffff; 
 }
 
 .light{
-  background-color : #ececea;
-  color : #212125;
+  background-color : #ffffff;
+  color : #22222a;
 }
 
 .hide{
@@ -145,6 +147,8 @@ body{
   margin-top : 0.25em;
   border-radius : 0.35em;
   transition : background-color 0.5 ease, color 0.5 ease;
+  background-color: inherit;
+  color: inherit;
 }
 
 .web_link p{

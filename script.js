@@ -31,7 +31,10 @@ let setTheme = (theme) => {
   
        navBar.style.borderBottom = 'solid #1a1a1a 0.5vmin';
        quoteContainer.style.backgroundColor='#22222a';
-       quoteContainer.style.borderColor = '#ffffff';
+       quoteContainer.style.borderColor = 'rgba(255,255,255,0.5)';
+       cards.forEach((card)=>{
+        card.style.borderColor = 'rgba(255,255,255,0.5)';
+       })
        subNav.style.color='rgb(120, 164, 212)';
        subLinks.forEach((link) => {
         link.style.color='rgb(196, 190, 190)';
@@ -44,7 +47,10 @@ let setTheme = (theme) => {
         toggle.innerHTML = '<img  src="assets/toggle_icon/light/moon_filled.png" rel="preload">'
         navBar.style.borderBottom ='solid #b8b8b8 0.5vmin';
         quoteContainer.style.backgroundColor='#ffffff';
-        quoteContainer.style.borderColor = '#22222a';
+        quoteContainer.style.borderColor = 'rgba(34,34,42,0.5)';
+        cards.forEach((card)=>{
+            card.style.borderColor = 'rgba(34,34,42,0.5)';
+           })
         subNav.style.color='rgb(5, 73, 145)';
         subLinks.forEach((link) => {
         link.style.color='rgb(22, 22, 22)';
@@ -54,8 +60,9 @@ let setTheme = (theme) => {
 
 
 
-quoteContainer.style.transition='border-color 0.5s ease';
-quoteContainer.style.transition='background-color 0.5s ease, color 0.10s ease';
+
+quoteContainer.style.transition='border-color 0s ease';
+quoteContainer.style.transition='background-color 0s ease, color 0s ease';
 
 
     

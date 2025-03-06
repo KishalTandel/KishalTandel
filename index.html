@@ -10,13 +10,15 @@
     <title>Kishal Tandel</title>
     <link rel="stylesheet" href="style.css"> 
     <link rel="preload" as="image" href="assets/favicon/light/favicon_512.png">
-    <link rel="preload" as="image" href="assets/favicon/dark/favicon_512.png">   
+    <link rel="preload" as="image" href="assets/favicon/dark/favicon_512.png"> 
+    <link rel="preload" as="image" href="assets/toggle_icon/light/moon_filled.png">
+    <link rel="preload" as="image" href="assets/toggle_icon/dark/sun_filled.png">
 </head>
 
 <body>
     <div class="info_container">
-        <div class="favicon"><img src="assets/favicon/dark/favicon_512.png" style="position:absolute" class="hide" id="dark"/>
-            <img  src="assets/favicon/light/favicon_512.png" style="position:absolute" class="hide" id="light"></div>
+        <div class="favicon"><img src="assets/favicon/dark/favicon_512.png" style="position:absolute" class="hide" id="dark_icon"/>
+            <img  src="assets/favicon/light/favicon_512.png" style="position:absolute" class="hide" id="light_icon"></div>
         <div class="name">Kishal Tandel</div>
         <div class="links">
             <a>CV</a>
@@ -37,7 +39,9 @@
             </div>
             <div class="github"><a href="https://github.com/KishalTandel/" target="_M" 
             style="color:inherit; text-decoration-line: none;">github</a></div>
-            <div class="toggle"></div>
+            <div class="toggle"><img src="assets/toggle_icon/dark/sun_filled.png" id="dark_toggle" style="position:absolute" class="hide"/>
+                <img src="assets/toggle_icon/light/moon_filled.png" id="light_toggle" style="position:absolute" class="hide"/>
+            </div>
         </div>
     </div>
 

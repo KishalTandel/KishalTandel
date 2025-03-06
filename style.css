@@ -27,7 +27,7 @@ body{
   transform : translateY(-100%);
   background-color: inherit;
   color: inherit;
-  transition: box-shadow 0.5s ease,border-color 0.5s ease,transform 0.25s ease;
+  transition: box-shadow 0s ease, transform 0.25s ease;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -109,7 +109,7 @@ body{
 }
 
 
-.quote_container{
+.dark .quote_container{
   display : flexbox;
   border : solid 0.01em;
   border-radius : 0.5em;
@@ -117,18 +117,36 @@ body{
   width : 49.5em;
   padding : 0.25em;
   font-size : 0.9em;
-  transition : background-color 0.5 ease, color 0.5 ease;
   text-align : center;
   line-height : 0.5em;
   white-space : pre-wrap; 
   min-height : 7.2em;
   margin-top: -1em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.095);
+  border : solid rgba(255,255,255,0.4) 0.01em;
+}
+
+.light .quote_container{
+  display : flexbox;
+  border : solid 0.01em;
+  border-radius : 0.5em;
+  height :auto ;
+  width : 49.5em;
+  padding : 0.25em;
+  font-size : 0.9em;
+  text-align : center;
+  line-height : 0.5em;
+  white-space : pre-wrap; 
+  min-height : 7.2em;
+  margin-top: -1em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.095);
+  border : solid rgba(34,34,42,0.7) 0.01em;
 }
 
 .quote_container:hover,.card:hover{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
+  
 }
 
 .quote_container p{
@@ -147,7 +165,7 @@ body{
   border-radius : 0.5em;
 }
 
-.card{
+.dark .card{
   display : flex;
   width : 22.25em;
   border : solid 0.01em;
@@ -158,6 +176,21 @@ body{
   background-color: inherit;
   color: inherit;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.095);
+  border : solid rgba(255,255,255,0.4) 0.01em;
+}
+
+.light .card{
+  display : flex;
+  width : 22.25em;
+  border : solid 0.01em;
+  height : 15em;
+  margin-top : 0.6em;
+  border-radius : 0.35em;
+  transition : background-color 0.5 ease, color 0.5 ease;
+  background-color: inherit;
+  color: inherit;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.095);
+  border : solid rgba(34,34,42,0.7) 0.01em;
 }
 
 .web_link p{
@@ -195,6 +228,25 @@ body{
   width: 6em;
   height: auto;
 }
+
+.dark .card, .dark .quote_container{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.28);
+}
+
+.light .card, .light .quote_container{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09);
+}
+
+.dark .card:hover, .dark .quote_container:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.35);
+  border : solid rgba(255,255,255,0.8) 0.01em;
+}
+.light .card:hover, .light .quote_container:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.11);
+  border : solid rgba(34,34,42,0.9) 0.01em;
+}
+
+
 
 
 @media (max-width:799px) {

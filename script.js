@@ -1,6 +1,5 @@
-
 let body = document.body;
-let toggle = document.querySelector(".toggle");
+let toggle = document.querySelector('.toggle');
 let navBar = document.querySelector(".nav_bar");
 let name = document.querySelector('.name');
 let favIcon = document.querySelector(".favicon");
@@ -12,60 +11,38 @@ let subLinks = document.querySelectorAll(".web_link p");
 let subNav = document.querySelector(".sub_nav");
 let quotation = document.querySelector('.quotation');
 let author = document.querySelector('.author');
-let dark = document.getElementById('dark');
-let light = document.getElementById('light');
-
-
-
+let darkIcon = document.getElementById('dark_icon');
+let lightIcon = document.getElementById('light_icon');
+let darkToggle = document.getElementById("dark_toggle");
+let lightToggle = document.getElementById("light_toggle");
 let storedTheme = localStorage.getItem('theme');
 let isSystemModeDark = window.matchMedia('(prefers-color-scheme:dark)').matches;
 
 let setTheme = (theme) => {
    if (theme === 'dark'){
-       toggle.classList.remove('hide')
        body.classList.remove("light")
        body.classList.add("dark")
-       dark.classList.remove('hide');
-       light.classList.add('hide');
-       toggle.innerHTML='<img src="assets/toggle_icon/dark/sun_filled.png" rel="preload">'
-  
-       navBar.style.borderBottom = 'solid #1a1a1a 0.5vmin';
-
-       subNav.style.color='rgb(120, 164, 212)';
-       subLinks.forEach((link) => {
-        link.style.color='rgb(196, 190, 190)';
-       });
+       darkIcon.classList.remove('hide');
+       lightIcon.classList.add('hide');
+       darkToggle.classList.remove('hide');
+       lightToggle.classList.add("hide");
     } else{
         body.classList.remove("dark")
         body.classList.add("light")
-        light.classList.remove('hide');
-        dark.classList.add('hide');
-        toggle.innerHTML = '<img  src="assets/toggle_icon/light/moon_filled.png" rel="preload">'
-        navBar.style.borderBottom ='solid #b8b8b8 0.5vmin';
-
-        subNav.style.color='rgb(5, 73, 145)';
-        subLinks.forEach((link) => {
-        link.style.color='rgb(22, 22, 22)';
-       });
+        darkIcon.classList.add('hide');
+        lightIcon.classList.remove('hide');
+        darkToggle.classList.add('hide');
+        lightToggle.classList.remove("hide");
     }
 }
-
-
-    
 
 if (storedTheme){
     setTheme(storedTheme);
 } else if(isSystemModeDark){
     setTheme('dark');
 } else {
-    setTheme('light')
+    setTheme('light');
 }
-
-toggle.addEventListener('click' , () => {
-    let newTheme=body.classList.contains('dark') ? 'light' : 'dark' ;
-    setTheme(newTheme);
-    localStorage.setItem('theme' , newTheme);
-});
 
 favIcon.addEventListener('click', () => {
     let newTheme=body.classList.contains('dark') ? 'light' : 'dark' ;
@@ -73,9 +50,13 @@ favIcon.addEventListener('click', () => {
     localStorage.setItem('theme' , newTheme) ;
 });
 
-let object ={
-    threshold: 0
-};
+toggle.addEventListener('click' , () => {
+    let newTheme=body.classList.contains('dark') ? 'light' : 'dark' ;
+    setTheme(newTheme);
+    localStorage.setItem('theme' , newTheme);
+});
+
+let object;
 
 let callBack= (entries) => {
     if (!(entries[0].isIntersecting)){
@@ -90,7 +71,6 @@ obj.observe(infoContainer);
 let storedIndex=-1;
 let isSame=-1;
 let runTimeout=[];
-
 
 let getQuote = () => {
     do{
@@ -110,22 +90,21 @@ let getQuote = () => {
         isSame=index;
     }
     
-
 quoteContainer.addEventListener('click', () => {
    getQuote();
 });
 
-
 subLinks.forEach((link)=> {
     link.addEventListener('click', scrollToTop)
-})
+});
+
 function scrollToTop(){
     function step(){
         window.scrollBy(0,-30);
         if(window.scrollY>0){ requestAnimationFrame(step)}
     } requestAnimationFrame(step)
-}
+};
 
 window.addEventListener('load', () => {
     getQuote();
-})
+});

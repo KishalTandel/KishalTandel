@@ -3,51 +3,8 @@
   padding : 0em;
 }
 
-body{
-  transition : background-color 0s ease, color 0s ease, border-color 0s ease,opacity 0s ease;
-  display : flex;
-  flex-direction : column;
-  justify-content : center;
-  align-items : center;
-  font-family :  Helvetica, sans-serif,Arial;
-
-}
-
-
-
-.nav_bar{
-  position : fixed;
-  top : 0em;
-  left : 0em;
-  display : flex;
-  justify-content : space-between;
-  height : 3.3em;
-  width : 100%;
-  
-  transform : translateY(-100%);
-  background-color: inherit;
-  color: inherit;
-  transition: box-shadow 0s ease, transform 0.25s ease;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.web_link{
-  display : flex;
-  justify-content : left;
-  align-items : center;
-  width : auto;
-  margin-left : 0.5em;
-  font-size : 1.8em;
-  font-family :  Montserrat;
-}
-
-.sub_nav{
-  display : flex;
-  width : 50%;
-  justify-content : space-evenly;
-  align-items : center;
-  font-size : 1.2em;
-
+.hide{
+  display : none;
 }
 
 .dark{
@@ -60,23 +17,13 @@ body{
   color : #22222a;
 }
 
-
-.hide{
-  display : none;
-}
-
-.toggle{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.toggle img{
-  width : 1.3em;
-  height : auto;
-}
-.links a,.toggle img,.github,.CV,.favicon img:hover{
-  cursor : pointer;
-  opacity : 0.95;
+body{
+  transition : background-color 0s ease, color 0s ease, border-color 0s ease,opacity 0s ease;
+  display : flex;
+  flex-direction : column;
+  justify-content : center;
+  align-items : center;
+  font-family :  Helvetica, sans-serif,Arial;
 }
 
 .info_container{
@@ -89,9 +36,23 @@ body{
   margin-top: 1.5em;
 }
 
+.info_container img{
+  width : 7em;
+  height : auto;
+}
+
+.favicon{
+  display : flex;
+  justify-content : center;
+  align-items : center;
+}
+
 .favicon img{
   margin-top: 3em;
+  width: 6em;
+  height: auto;
 }
+
 .name{
   font-size : 2.3em;
   width : auto;
@@ -108,45 +69,89 @@ body{
   font-size : 1.1em;
 }
 
-
-.dark .quote_container{
-  display : flexbox;
-  border : solid 0.01em;
-  border-radius : 0.5em;
-  height :auto ;
-  width : 49.5em;
-  padding : 0.25em;
-  font-size : 0.9em;
-  text-align : center;
-  line-height : 0.5em;
-  white-space : pre-wrap; 
-  min-height : 7.2em;
-  margin-top: -1em;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.095);
-  border : solid rgba(255,255,255,0.4) 0.01em;
+.nav_bar{
+  position : fixed;
+  top : 0em;
+  left : 0em;
+  display : flex;
+  justify-content : space-between;
+  height : 3.3em;
+  width : 100%;
+  transform : translateY(-100%);
+  background-color: inherit;
+  color: inherit;
+  transition: box-shadow 0s ease, transform 0.25s ease;
 }
 
-.light .quote_container{
-  display : flexbox;
-  border : solid 0.01em;
-  border-radius : 0.5em;
-  height :auto ;
-  width : 49.5em;
-  padding : 0.25em;
-  font-size : 0.9em;
-  text-align : center;
-  line-height : 0.5em;
-  white-space : pre-wrap; 
-  min-height : 7.2em;
-  margin-top: -1em;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.095);
-  border : solid rgba(34,34,42,0.7) 0.01em;
-}
-
-.quote_container:hover,.card:hover{
+.dark .nav_bar{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-bottom: solid #1a1a1a 0.1em;
+}
+
+.light .nav_bar{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-bottom:  solid #b8b8b8 0.1em;
+}
+
+.web_link{
+  display : flex;
+  justify-content : left;
+  align-items : center;
+  width : auto;
+  margin-left : 0.5em;
+  font-size : 1.8em;
+  font-family :  Montserrat;
+}
+
+.web_link p{
   cursor: pointer;
-  
+}
+
+.sub_nav{
+  display : flex;
+  width : 50%;
+  justify-content : space-evenly;
+  align-items : center;
+  font-size : 1.2em;
+}
+
+.dark .sub_nav{
+  color: rgb(175, 208, 244);
+}
+
+.light .sub_nav{
+  color:rgb(5, 73, 145);
+}
+
+.toggle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle img{
+  width : 1.3em;
+  height : auto;
+}
+
+.links a,.toggle img,.github,.CV,.favicon img:hover{
+  cursor : pointer;
+  opacity : 0.95;
+}
+
+.quote_container{
+  display : flexbox;
+  border : solid 0.01em;
+  border-radius : 0.5em;
+  height :auto ;
+  width : 49.5em;
+  padding : 0.25em;
+  font-size : 0.9em;
+  text-align : center;
+  line-height : 0.5em;
+  white-space : pre-wrap; 
+  min-height : 7.2em;
+  margin-top: -1em;
 }
 
 .quote_container p{
@@ -165,7 +170,7 @@ body{
   border-radius : 0.5em;
 }
 
-.dark .card{
+.card{
   display : flex;
   width : 22.25em;
   border : solid 0.01em;
@@ -175,40 +180,8 @@ body{
   transition : background-color 0.5 ease, color 0.5 ease;
   background-color: inherit;
   color: inherit;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.095);
-  border : solid rgba(255,255,255,0.4) 0.01em;
 }
 
-.light .card{
-  display : flex;
-  width : 22.25em;
-  border : solid 0.01em;
-  height : 15em;
-  margin-top : 0.6em;
-  border-radius : 0.35em;
-  transition : background-color 0.5 ease, color 0.5 ease;
-  background-color: inherit;
-  color: inherit;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.095);
-  border : solid rgba(34,34,42,0.7) 0.01em;
-}
-
-.web_link p{
-  cursor : pointer;
-  scroll-behavior : smooth;
-  transition : scroll-behaviour 5s ease-in;
-}
-
-.info_container img{
-  width : 7em;
-  height : auto;
-}
-
-.favicon{
-  display : flex;
-  justify-content : center;
-  align-items : center;
-}
 
 .quote_container .author{
   font-weight : 700;
@@ -224,17 +197,18 @@ body{
   font-size : 1em;
 }
 
-.favicon img{
-  width: 6em;
-  height: auto;
+.quote_container:hover,.card:hover{
+  cursor: pointer;
 }
 
 .dark .card, .dark .quote_container{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.28);
+  border : solid rgba(255,255,255,0.4) 0.01em;
 }
 
 .light .card, .light .quote_container{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09);
+  border : solid rgba(34,34,42,0.7) 0.01em;
 }
 
 .dark .card:hover, .dark .quote_container:hover{
@@ -245,9 +219,6 @@ body{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.11);
   border : solid rgba(34,34,42,0.9) 0.01em;
 }
-
-
-
 
 @media (max-width:799px) {
  
@@ -264,17 +235,18 @@ html,body{
 }
 
 .sub_nav{
-  font-size : 0.7em;
+  font-size : 0.9em;
 }
 
 .toggle img{
-  width :1em;
+  width :1.1em;
   height : auto;
 }
 
 .info_container{
   height:7.5em;
 }
+
 .name{
   margin-top: 2em;
   font-size : 1.7em;
@@ -290,35 +262,31 @@ html,body{
   height : auto;
 }
 
-.quote_container{
-  width : 28em;
+.dark .quote_container,.light .quote_container{
+  width : 93.1%;
   font-size : 0.8em;
   border-radius : 0.25em;
   margin-top: -2em;
+  height: auto;
 }
 
 .card_container{
-  width : 22.8em;
+  width : 98%;
   height :auto;
   flex-wrap: nowrap;
+  align-items: center;
 }
 
 .about{
   font-size : 0.9em;
   text-align : left;
   line-height : 1.4em;
-  width : 24.8em;
+  width : 95%;
 }
 
-.card{
-  width : 22.7em;
+.dark .card,.light .card{
+  width : 95%;
   border-radius : 0.25em;
 }
 } 
 
-@media (max-width :399px){
-  html,body{
-    overflow-x : hidden;
-  }
-
-}

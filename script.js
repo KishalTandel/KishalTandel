@@ -3,7 +3,6 @@ let toggle = document.querySelector('.toggle');
 let navBar = document.querySelector(".nav_bar");
 let name = document.querySelector('.name');
 let favIcon = document.querySelector(".favicon");
-let img = document.querySelector(".favicon img")
 let infoContainer = document.querySelector(".info_container");
 let quoteContainer = document.querySelector(".quote_container")
 let cards = document.querySelectorAll(".card");
@@ -18,6 +17,7 @@ let lightToggle = document.getElementById("light_toggle");
 let storedTheme = localStorage.getItem('theme');
 let isSystemModeDark = window.matchMedia('(prefers-color-scheme:dark)').matches;
 
+let rotation=0;
 let setTheme = (theme) => {
    if (theme === 'dark'){
        body.classList.remove("light")
@@ -34,6 +34,8 @@ let setTheme = (theme) => {
         darkToggle.classList.add('hide');
         lightToggle.classList.remove("hide");
     }
+    rotation += 360;
+    toggle.style.transform = `rotate(${rotation}deg)`;
 }
 
 if (storedTheme){

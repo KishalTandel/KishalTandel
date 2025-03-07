@@ -127,6 +127,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 300ms ease;
 }
 
 .toggle img{

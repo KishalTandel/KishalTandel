@@ -135,7 +135,7 @@ body{
   height : auto;
 }
 
-.links a,.toggle img,.github,.CV,.favicon img:hover{
+.links a,.toggle img,.github,.Books_Solutions,.favicon img:hover{
   cursor : pointer;
   opacity : 0.95;
 }
